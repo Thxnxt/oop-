@@ -1,9 +1,9 @@
 import java.awt.*;
 import javax.swing.*;
 public class CalculatorOneGUI {
-    private Jframe fr;
+    private JFrame fr;
     private JButton bn1, bn2, bn3, bn4;
-    private JPanel fl, gi;
+    private JPanel flow, gi;
     private JTextField txt1, txt2, txt3;
     public CalculatorOneGUI(){
         fr = new JFrame("Calculator");
@@ -14,11 +14,9 @@ public class CalculatorOneGUI {
         bn2 = new JButton("-");
         bn3 = new JButton("*");
         bn4 = new JButton("/");
-        fl.add(bn1);    flow.add(bn2);    fl.add(bn3);    flow.add(bn4);
+        flow.add(bn1);    flow.add(bn2);    flow.add(bn3);    flow.add(bn4);
+        gi.add(txt1);       gi.add(txt2);      gi.add(flow);       gi.add(txt3);
         
-        gi.add(txt1);       gi.add(flow);  
-        gi.add(txt2);       gi.add(txt3);
-           
         fr.add(gi);
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setSize(400, 190);
