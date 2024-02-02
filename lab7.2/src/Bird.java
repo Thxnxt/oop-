@@ -1,4 +1,3 @@
-
 public abstract class Bird implements Flyable{
     private double wingSize;
     private double weight;
