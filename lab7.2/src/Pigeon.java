@@ -1,6 +1,5 @@
-
 public class Pigeon extends Bird{
-    private int numberOfPigeon;
+    private static int numberOfPigeon;
     public Pigeon(){
         this(0, 0,0);
     }
@@ -22,7 +21,7 @@ public class Pigeon extends Bird{
             System.out.println("Fly Fly");
             setWeight(getWeight()-0.25);
         }else{
-            System.out.print("I'm hungry.");
+            System.out.print("I’m hungry.");
         }
     }
     public void takeOff(){
@@ -30,7 +29,7 @@ public class Pigeon extends Bird{
             System.out.println("Take Off");
             setWeight(getWeight()-0.5);
         }else{
-            System.out.print("I'm hungry.");
+            System.out.print("I’m hungry.");
         }
     }
     public void landing(){
@@ -38,7 +37,7 @@ public class Pigeon extends Bird{
             System.out.println("Landing");
             setWeight(getWeight()-0.5);
         }else{
-            System.out.print("I'm hungry.");
+            System.out.print("I’m hungry.");
         }
     }
     @Override
