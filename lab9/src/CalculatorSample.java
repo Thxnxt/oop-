@@ -75,7 +75,7 @@ public class CalculatorSample implements ActionListener{
         } else if (ev.getSource().equals(bnc)) {// clear
             txt.setText("");
             con1 = con2 = aws = 0;
-            op = null;
+            op = "";
         } else if (ev.getSource().equals(bn10)) {// "+"
             con1 = Double.parseDouble(txt.getText());
             op = "+";
