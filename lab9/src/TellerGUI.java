@@ -44,7 +44,7 @@ public class TellerGUI implements ActionListener{
 
         fr.add(main);
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        fr.setSize(260, 190);
+        fr.setSize(280, 200);
         fr.setVisible(true);
         
         deposit.addActionListener(this);
