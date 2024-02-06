@@ -11,9 +11,7 @@ public class Account {
     }
     public double withdraw(double b){
         if (b >= 0){
-            if ((balance-b) < 0){
-
-            }
+            if ((balance-b) < 0){}
         }else{
             return balance-b;
         }
