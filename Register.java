@@ -15,16 +15,18 @@ public class Register implements ActionListener  {
     public void Register() {
         fr = new JFrame("Register");
         pn = new JPanel(new FlowLayout());
-        main = new JScrollPane(pn);
+        main = new JScrollPane();
         main.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         
         usernameLabel = new JLabel("Username");
         pn.add(usernameLabel);
         
         
+        //Add other component here...
+        
+        
         main.add(pn);
         fr.add(main);
-        
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.pack();
         fr.setVisible(true);
