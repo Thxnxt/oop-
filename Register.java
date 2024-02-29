@@ -11,6 +11,7 @@ public class Register implements ActionListener  {
     private JLabel usernameLabel, passwordLabel, confirmpasswordLabel, gmailLabel, customerLabel, ageLabel, petNameLabelLabel, AnimalTypeLabel, BreedLabel, chronicillnessLabel, personLabel, petLabel;
     private JTextField usernameField, gmailField, customerNameField, ageField, petNameField, AnimalTypeField, chronicillnessField, BreedField;
     private JPasswordField passwordField, confirmpasswordField;
+    private JButton summit;
 
     public Register() {
         fr = new JFrame("Register");
@@ -62,9 +63,14 @@ public class Register implements ActionListener  {
         
         
         
+        summit = new JButton(" Summit ");
+        summit.addActionListener(this);
+
+
         main.add(pn);
         // fr.add(main);
         fr.add(pn);
+        fr.setResizable(false);
         fr.setLocationRelativeTo(null);
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setSize(500, 300);
@@ -73,7 +79,7 @@ public class Register implements ActionListener  {
 
     @Override
     public void actionPerformed(ActionEvent ev) {
-
+        ev.getSource();
     }
     public static void main(String[] args){SwingUtilities.invokeLater(() -> new Register());}
 //    public static void main(String[] args) {
