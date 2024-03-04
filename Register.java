@@ -6,7 +6,7 @@ import javax.swing.*;
 public class Register implements ActionListener {
 
     private JFrame fr;
-    private JPanel head, pn;
+    private JPanel head, pn, loginpn;
     private JScrollPane main;
     private JLabel usernameLabel, passwordLabel, confirmpasswordLabel, gmailLabel, customerLabel, ageLabel,
             petNameLabelLabel, AnimalTypeLabel, BreedLabel, chronicillnessLabel, personLabel, petLabel, registerLabel;
@@ -16,19 +16,30 @@ public class Register implements ActionListener {
     private JButton summit, login;
 
     public Register() {
+        // setting
         fr = new JFrame("Register");
+        loginpn = new JPanel(new FlowLayout());
+        pn = new JPanel(new GridLayout());
+        loginpn.setBackground(new Color(255, 238, 227));
 
-        head = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        // headline
+        head = new JPanel(new BorderLayout());
         head.setBackground(new Color(255, 238, 227));
 
-        registerLabel = new JLabel("Register ", SwingConstants.LEFT);
+        registerLabel = new JLabel("Register ");
         registerLabel.setFont(new Font("Inter", Font.BOLD, 30));
-        head.add(registerLabel);
+        head.add(registerLabel, BorderLayout.WEST);
 
+        // login Button
         login = new JButton("Login");
         login.setFont(new Font("Inter", Font.PLAIN, 20));
-        head.add(login);
+        loginpn.add(login);
+        head.add(loginpn, BorderLayout.EAST);
+        login.setFocusPainted(false);
+        login.setBackground(new Color(255, 238, 227));
+        login.setBorder(BorderFactory.createLineBorder((new Color(255, 238, 227))));
 
+        // content
         main = new JScrollPane();
         main.getViewport().setBackground(new Color(255, 227, 168));
         main.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -36,6 +47,7 @@ public class Register implements ActionListener {
         summit = new JButton(" Summit ");
         summit.addActionListener(this);
 
+        main.add(pn);
         fr.add(main, BorderLayout.CENTER);
         fr.add(head, BorderLayout.NORTH);
         fr.setLocationRelativeTo(null);
