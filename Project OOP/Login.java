@@ -1,16 +1,18 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.awt.geom.Ellipse2D;
+import java.awt.image.BufferedImage;
 
 public class Login implements ActionListener {
 
     private JFrame fr;
     private JPanel main, haedPanel, usernamePanel, passwordPanel, donthaveaccPanel, loginPanel;
-    private JLabel head, donthaveacc, imagLabel, usernameLabel, passwordLabel;
+    private JLabel head, donthaveacc, imagLabel, usernameLabel, passwordLabel, imagelogoLabel;
     private JButton login, register;
     private JTextField usernameField;
     private JPasswordField passwordField;
-    private ImageIcon imageIcon;
+    private ImageIcon imagepage, imagelogo, resizedImageIcon, roundedIcon;
 
     public Login() {
 
@@ -21,10 +23,15 @@ public class Login implements ActionListener {
         main.setBackground(new Color(255, 238, 227));
 
         //BorderLayout.WEST
-        imageIcon = new ImageIcon(Login.class.getResource("test.jpg"));
-        imagLabel = new JLabel(imageIcon);
+        imagepage = new ImageIcon(Login.class.getResource("test.jpg"));
+        imagLabel = new JLabel(imagepage);
+        imagLabel.setPreferredSize(new Dimension(300, 200));
 
         //Head Line
+        imagelogo = new ImageIcon(getClass().getResource("test.jpg"));
+        resizedImageIcon = resizeImageIcon(imagelogo, 150, 150);
+        roundedIcon = getRoundedImageIcon(resizedImageIcon);
+        imagelogoLabel = new JLabel(roundedIcon);
         
 
         head = new JLabel("Animal-Waiting", SwingConstants.LEADING);
@@ -32,6 +39,7 @@ public class Login implements ActionListener {
 
         haedPanel = new JPanel(new FlowLayout(FlowLayout.LEADING, 30, 70));
         haedPanel.setBackground(new Color(255, 238, 227));
+        haedPanel.add(imagelogoLabel);
         haedPanel.add(head);
 
         //Username Line
@@ -108,6 +116,25 @@ public class Login implements ActionListener {
 
         register.addActionListener(this);
         login.addActionListener(this);
+    }
+
+    private ImageIcon resizeImageIcon(ImageIcon originalIcon, int width, int height) {
+        Image img = originalIcon.getImage();
+        Image resizedImg = img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        return new ImageIcon(resizedImg);
+    }
+
+    private ImageIcon getRoundedImageIcon(ImageIcon originalIcon) {
+        int diameter = Math.min(originalIcon.getIconWidth(), originalIcon.getIconHeight());
+        BufferedImage image = new BufferedImage(diameter, diameter, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = image.createGraphics();
+
+        Ellipse2D.Double ellipse = new Ellipse2D.Double(0, 0, diameter, diameter);
+        g2.setClip(ellipse);
+        originalIcon.paintIcon(null, g2, 0, 0);
+
+        g2.dispose();
+        return new ImageIcon(image);
     }
     
     @Override
