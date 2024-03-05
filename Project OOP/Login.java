@@ -30,7 +30,7 @@ public class Login implements ActionListener {
         head = new JLabel("Animal-Waiting", SwingConstants.LEADING);
         head.setFont(new Font("Inter", Font.BOLD, 50));
 
-        haedPanel = new JPanel(new FlowLayout(FlowLayout.LEADING, 30, 50));
+        haedPanel = new JPanel(new FlowLayout(FlowLayout.LEADING, 30, 70));
         haedPanel.setBackground(new Color(255, 238, 227));
         haedPanel.add(head);
 
@@ -98,12 +98,14 @@ public class Login implements ActionListener {
         main.add(donthaveaccPanel);
         main.add(loginPanel);
 
+        //JFrame Setting
         fr.add(imagLabel, BorderLayout.WEST);
         fr.add(main, BorderLayout.CENTER);
         fr.setLocationRelativeTo(null);
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setSize(1280, 980);
         fr.setVisible(true);
+
         register.addActionListener(this);
         login.addActionListener(this);
     }
