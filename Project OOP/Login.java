@@ -99,7 +99,7 @@ public class Login implements ActionListener {
         login.setPreferredSize(new Dimension(200, 60));
         loginPanel.add(login);
 
-        //Add in BorderLayout.CENTER
+        //Add in JFrameBorderLayout.CENTER
         main.add(haedPanel);
         main.add(usernamePanel);
         main.add(passwordPanel);
