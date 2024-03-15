@@ -46,19 +46,17 @@ public class StudentView implements ActionListener, WindowListener{
     }
     @Override
     public void actionPerformed(ActionEvent ev){
-        if (ev.getSource().equals(deposit)){
-            
-            std.setID(Integer.parseInt(idtf.getText()));
+        try{
             std.setName(nametf.getText());
-            std.setMoney(std.getMoney()+100);
-            moneytf.setText(""+std.getMoney());
-            
-        }
-        else if (ev.getSource().equals(withdraw)){
-            
-            std.setMoney(std.getMoney()-100);
-            moneytf.setText(""+std.getMoney());
-            
+            std.setID(Integer.parseInt(idtf.getText()));
+            if (ev.getSource().equals(deposit)) {
+                std.setMoney(std.getMoney()+100);
+               moneytf.setText(std.getMoney()+"");
+            }else if (ev.getSource().equals(withdraw)){
+                std.setMoney(std.getMoney()-100);
+                moneytf.setText(std.getMoney()+"");
+            }
+        }catch(NumberFormatException a){   
         }
     }
     
@@ -92,7 +90,12 @@ public class StudentView implements ActionListener, WindowListener{
     public void windowClosing(WindowEvent w){
         try (FileOutputStream fout = new FileOutputStream("StudentM.dat");
             ObjectOutputStream oout = new ObjectOutputStream(fout);){
+            std.setName(nametf.getText());
+            std.setID(Integer.parseInt(idtf.getText()));
+            std.setMoney(std.getMoney());
+            
             oout.writeObject(std);
+            
             
         }catch (IOException io){
             io.printStackTrace();
