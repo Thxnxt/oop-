@@ -5,7 +5,7 @@ import java.awt.event.*;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 
-public class ChatDemo implements ActionListener, WindowListener{
+public class ChatDemo implements ActionListener, WindowListener, KeyListener{
     private JFrame fr;
     private JTextField textfield;
     private JTextArea textarea;
@@ -28,7 +28,7 @@ public class ChatDemo implements ActionListener, WindowListener{
         fr.addWindowListener(this);
         summit.addActionListener(this);
         reset.addActionListener(this);
-        
+        textfield.addKeyListener(this);
         fr.add(textarea);
         fr.add(textfield);
         fr.add(buttonpanel);
@@ -39,11 +39,12 @@ public class ChatDemo implements ActionListener, WindowListener{
     @Override
     public void actionPerformed(ActionEvent ev){
         if (ev.getSource().equals(summit)){
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-            System.out.print(dtf.format(LocalDateTime.now())+" : "+textfield.getText());
-            textarea.setText(textarea.getText() + dtf.format(LocalDateTime.now())+ " : "+ textfield.getText()+ "\n");
-            textfield.setText("");
-            
+            if (!textfield.getText().equals("")){
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+                System.out.print(dtf.format(LocalDateTime.now())+" : "+textfield.getText());
+                textarea.setText(textarea.getText() + dtf.format(LocalDateTime.now())+ " : "+ textfield.getText()+ "\n");
+                textfield.setText("");
+            } 
         }else if (ev.getSource().equals(reset)){
             textarea.setText("");
             
@@ -97,5 +98,25 @@ public class ChatDemo implements ActionListener, WindowListener{
 
     @Override
     public void windowDeactivated(WindowEvent e) {
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == 10){
+            if (!textfield.getText().equals("")){
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+                System.out.print(dtf.format(LocalDateTime.now())+" : "+textfield.getText());
+                textarea.setText(textarea.getText() + dtf.format(LocalDateTime.now())+ " : "+ textfield.getText()+ "\n");
+                textfield.setText("");
+            }
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
     }
 }
