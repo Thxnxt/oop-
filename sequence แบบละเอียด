@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 OPR/113.0.0.0" version="24.7.17">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
-    <mxGraphModel dx="856" dy="959" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="416" dy="466" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -8,13 +8,78 @@
           <mxGeometry x="130" y="80" width="30" height="60" as="geometry" />
         </mxCell>
         <mxCell id="TimfmX--96sFxMd31_qp-3" value="&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;div&gt;IManage Event&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
-          <mxGeometry x="260" y="80" width="120" height="60" as="geometry" />
+          <mxGeometry x="300" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="TimfmX--96sFxMd31_qp-7" value="Design" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="100" y="20" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="TimfmX--96sFxMd31_qp-9" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
           <mxGeometry x="140" y="180" width="10" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="TimfmX--96sFxMd31_qp-10" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="TimfmX--96sFxMd31_qp-11" target="TimfmX--96sFxMd31_qp-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="690" as="sourcePoint" />
+            <mxPoint x="460" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TimfmX--96sFxMd31_qp-12" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="TimfmX--96sFxMd31_qp-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="690" as="sourcePoint" />
+            <mxPoint x="320" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TimfmX--96sFxMd31_qp-11" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="355" y="180" width="10" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="TimfmX--96sFxMd31_qp-13" value="1. getAllEvent()" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-0.0274" y="10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="200" as="sourcePoint" />
+            <mxPoint x="356" y="200" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="300" y="200" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TimfmX--96sFxMd31_qp-14" value="2. Display All Event" style="endArrow=classic;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry x="0.011" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="355" y="250" as="sourcePoint" />
+            <mxPoint x="149" y="250" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="252.75" y="250" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TimfmX--96sFxMd31_qp-15" value="3. getCreateEvent(String name,&amp;nbsp;&lt;div&gt;String address,)&lt;/div&gt;" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.0686" y="20" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="330.5" as="sourcePoint" />
+            <mxPoint x="356" y="330.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="299.6300000000001" y="330" />
+            </Array>
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TimfmX--96sFxMd31_qp-18" value="10. Display Event" style="endArrow=classic;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry x="0.011" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="355" y="370.28999999999996" as="sourcePoint" />
+            <mxPoint x="149" y="370.28999999999996" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="252.01000000000022" y="370" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TimfmX--96sFxMd31_qp-19" value="11. SelectEvent()" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-0.0274" y="10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="619" as="sourcePoint" />
+            <mxPoint x="356" y="619" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="299.2600000000002" y="619.33" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
